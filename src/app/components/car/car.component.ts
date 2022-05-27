@@ -1,5 +1,8 @@
+import { CarService } from './../../services/car.service';
 import { Car } from './../../models/car';
 import { Component, OnInit } from '@angular/core';
+import { CarResponseModel } from 'src/app/models/carResponseModel';
+
 
 @Component({
   selector: 'app-car',
@@ -7,77 +10,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./car.component.css']
 })
 export class CarComponent implements OnInit {
-
-  car1 = {
-    carId: 1,
-    brandId: 1,
-    colorId: 1,
-    carName:"A",
-    modelYear: 2000,
-    dailyPrice: 5,
-    description: "yeni araç"
-  }
-
-
-  car2 = {
-    carId: 2,
-    brandId: 1,
-    colorId: 1,
-    carName:"B",
-    modelYear: 2000,
-    dailyPrice: 5,
-    description: "yeni araç"
-  }
-
-
-  car3 = {
-    carId: 3,
-    brandId: 1,
-    colorId: 1,
-    carName:"C",
-    modelYear: 2000,
-    dailyPrice: 5,
-    description: "yeni araç"
-  }
-
-
-  car4 = {
-    carId: 4,
-    brandId: 1,
-    colorId: 1,
-    carName:"D",
-    modelYear: 2000,
-    dailyPrice: 5,
-    description: "yeni araç"
-  }
-
-
-  car5 = {
-    carId: 5,
-    brandId: 1,
-    colorId: 1,
-    carName:"E",
-    modelYear: 2000,
-    dailyPrice: 5,
-    description: "yeni araç"
-  }
-
-
-  car6 = {
-    carId: 6,
-    brandId: 1,
-    colorId: 1,
-    carName:"F",
-    modelYear: 2000,
-    dailyPrice: 5,
-    description: "yeni araç"
-  }
-
+ 
   cars:Car[] = [];
+  dataLoaded = false;
 
-  constructor() { }
+
+  constructor(private carService:CarService) { } //service kullanabilmek için yapılır
 
   ngOnInit(): void {
+    this.getCar();
+    
   }
 
+  getCar(){
+    this.carService.getCar().subscribe(response=>{
+      this.cars=response.data;
+      this.dataLoaded =true;
+    })
+  }
 }

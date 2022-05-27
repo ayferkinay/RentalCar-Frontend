@@ -1,3 +1,5 @@
+import { CustomerService } from './../../services/customer.service';
+import { Customer } from './../../models/customer';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomerComponent implements OnInit {
 
-  constructor() { }
+  customers:Customer[]=[];
+  dataLoaded=false;
+
+  constructor(private customerSerive:CustomerService) { }
 
   ngOnInit(): void {
+    this.customerSerive.getCustomer().subscribe(response=>{
+      this.customers=response.data;
+      this.dataLoaded=true;
+    })
   }
 
 }

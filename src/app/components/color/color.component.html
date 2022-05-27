@@ -1,0 +1,8 @@
+<div class="input-group mb-2 mt-4">
+    <input type="search" class="form-control rounded" placeholder="Renk Ara" aria-label="Search" aria-describedby="search-addon" />
+    <button type="button" class="btn btn-outline-primary">Ara</button>
+  </div>
+  
+  <ul *ngFor="let color of colors" class="list-group "  >
+      <li class="list-group-item">{{color.colorId}} - {{color.colorName}}</li>
+    </ul>

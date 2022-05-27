@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from "@angular/common/http"; //apiye istekte bulunacağımız zaman module içinde bu importun yapılması gerek. injection yapıyor
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,7 +12,7 @@ import { CustomerComponent } from './components/customer/customer.component';
 import { NaviComponent } from './components/navi/navi.component';
 
 @NgModule({
-  declarations: [
+  declarations: [ //bir componnetn kullanılacağı zaman buraya eklenir
     AppComponent,
     CarComponent,
     ColorComponent,
@@ -22,7 +23,8 @@ import { NaviComponent } from './components/navi/navi.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
