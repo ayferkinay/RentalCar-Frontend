@@ -1,4 +1,3 @@
-
 import { HttpClient } from '@angular/common/http'; //backende istekte bulunup verileri çekeceğiz
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -9,7 +8,7 @@ import { CarResponseModel } from '../models/carResponseModel';
 })
 export class CarService {
 
-  apiUrl="https://localhost:44334/api/cars/getall" //data başka bir adresten çekiliyorsa o adersin url kısmı kullanılır
+  apiUrl="https://localhost:44334/api/cars/getcardetails" //data başka bir adresten çekiliyorsa o adersin url kısmı kullanılır
   
   constructor(private httpClient: HttpClient) { }
 

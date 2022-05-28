@@ -1,3 +1,4 @@
+
 import { Rental } from './rental';
 import { responseModel } from './responseModel';
 

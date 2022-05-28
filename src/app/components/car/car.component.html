@@ -1,3 +1,4 @@
+<h1 style="text-align: center;">Cars</h1>
 <div *ngIf="dataLoaded==false" class="spinner-border text-warning" role="status">
   </div>
 
@@ -5,23 +6,23 @@
 <table *ngIf="dataLoaded==true" class="table">
     <thead>
         <tr>
-            <th>Id</th>
-            <th>Marka Id</th>
-            <th>Renk Id</th>
+
+            <th>Marka Adı</th>
+            <th>Renk Adı</th>
             <th>Araç Modeli</th>
-            <th>Model Yılı</th>
+            <th>Araç Model Yili</th>
             <th>Günlük Ücret</th>
-            <th>Açıklama</th>
+            <th>Detaylar</th>
 
         </tr>
     </thead>
     <tr *ngFor = "let car of cars">
-        <td>{{car.id}}</td>
-        <td>{{car.brandId}}</td>
-        <td>{{car.colorId}}</td>
+        <td>{{car.brandName}}</td>
+        <td>{{car.colorName}}</td>
         <td>{{car.carName}}</td>
         <td>{{car.modelYear}}</td>
         <td>{{car.dailyPrice}}</td>
         <td>{{car.description}}</td>
+
     </tr>
 </table>

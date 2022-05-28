@@ -1,0 +1,22 @@
+<h1 style="text-align: center;">Rentals</h1>
+<div *ngIf="dataLoaded == false" class="spinner-border text-info" role="status">
+    <span class="visually-hidden">Loading...</span>
+</div>
+<table *ngIf="dataLoaded == true" class="table table-hover table-striped">
+    <thead>
+        <tr>
+            <th>Brand Name</th>
+            <th>Customer</th>
+            <th>Rent Date</th>
+            <th>Return Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let rental of rentals">
+            <td>{{rental.brandName}}</td>
+            <td>{{rental.fullName}}</td>
+            <td>{{rental.rentDate}}</td>
+            <td>{{rental.returnDate}}</td>
+        </tr>
+    </tbody>
+</table>

@@ -1,3 +1,5 @@
+import { Color } from './../../models/color';
+import { Brand } from './../../models/brand';
 import { CarService } from './../../services/car.service';
 import { Car } from './../../models/car';
 import { Component, OnInit } from '@angular/core';
@@ -11,21 +13,21 @@ import { CarResponseModel } from 'src/app/models/carResponseModel';
 })
 export class CarComponent implements OnInit {
  
-  cars:Car[] = [];
+  cars:Car[]=[]
   dataLoaded = false;
 
 
   constructor(private carService:CarService) { } //service kullanabilmek için yapılır
 
   ngOnInit(): void {
-    this.getCar();
+    this.getCar()
     
   }
 
   getCar(){
-    this.carService.getCar().subscribe(response=>{
-      this.cars=response.data;
-      this.dataLoaded =true;
-    })
+    this.carService.getCar().subscribe((response=>{
+      this.cars=response.data
+      this.dataLoaded=true
+    }))
   }
 }

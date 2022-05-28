@@ -8,12 +8,12 @@ import { Injectable } from '@angular/core';
 })
 export class RentalService {
 
-  apiUrl="https://localhost:44334/api/customers/getall"
+  apiUrl="https://localhost:44334/api/rentals/getrentaldetails"
 
   constructor(private httpClient:HttpClient) {}
 
     getRental():Observable<RentalResponseModel>{
-      return this.httpClient.get<RentalResponseModel>(this.apiUrl)
+      return this.httpClient.get<RentalResponseModel>(this.apiUrl);
     }
   
 }
